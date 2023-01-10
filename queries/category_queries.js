@@ -41,7 +41,8 @@ const addCategory = (req, res) => {
       if (error) {
         throw error;
       }
-      res.status(201).send(`Category added with ID: ${results.insertId}`);
+      console.log(results, "result");
+      res.status(201).send(`Category added with ID: ${results.id}`);
     }
   );
 };
