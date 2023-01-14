@@ -17,7 +17,7 @@ app.listen(port, function () {
 });
 
 app.get("/categories", db.getCategory);
-app.get("/categories/:id", db.getCategoryById);
+app.get("/categorie/:id", db.getCategoryById);
 app.post("/categorie", db.addCategory);
 app.put("/categorie/:id", db.updateCategory);
 app.delete("/categorie/:id", db.deleteCategory);
