@@ -20,4 +20,7 @@ app.listen(port, function () {
 // app.get("/categorie/:id", db.getCategoryById);
 // app.post("/categorie", db.addCategory);
 // app.put("/categorie/:id", db.updateCategory);
-// app.delete("/categorie/:id", db.deleteCategory);
+// app.delete("/categorie/:id", db.deleteCategor
+
+const categoryRoute = require("./routes/categoryroute")();
+app.use("/categories", categoryRoute);
