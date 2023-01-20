@@ -40,14 +40,31 @@ class Category {
       };
     }
   }
+  static async getCategoryById(req) {
+    console.log(req, "req");
+    try {
+      let id = req.params.id;
+      let query = knex(process.env.CATEGORY)
+        .where({ id: id })
+        .select("category_name");
+      let results = await query;
+      return { success: true, message: "Category list", data: results };
+    } catch (err) {
+      return {
+        success: false,
+        message: "Error occured while fetching learntype data",
+        data: {},
+      };
+    }
+  }
   static async editCategory(req) {
     // console.log(req, "req");
 
     try {
-      let id = req.id;
-      let query = knex(process.env.CATEGORY)
-        .where({ id: id })
-        .update({ category_name: req.category_name });
+      let id = req.params.id;
+      let query = knex(process.env.CATEGORY).where({ id: id }).update({
+        category_name: req.body.category_name,
+      });
       await query;
       return { success: true, message: "Successfully edited", data: {} };
     } catch (err) {
@@ -61,7 +78,7 @@ class Category {
 
   static async deleteCategory(req) {
     try {
-      let id = req.id;
+      let id = req.params.id;
       let query = knex(process.env.CATEGORY).where({ id: id }).del();
       await query;
       return { success: true, message: "Successfully Deleted", data: {} };

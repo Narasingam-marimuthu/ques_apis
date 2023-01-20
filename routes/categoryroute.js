@@ -7,9 +7,13 @@ module.exports = () => {
   categoryRoute.route("/addCategories").post(categoryController.addCategory);
 
   categoryRoute.route("/getCategories").get(categoryController.getCategory);
-  categoryRoute.route("/id").get(categoryController.getCategory);
+  categoryRoute
+    .route("/getCategories/:id")
+    .get(categoryController.getCategoryById);
 
-  categoryRoute.route("/editCategories").put(categoryController.editCategory);
+  categoryRoute
+    .route("/editCategories/:id")
+    .put(categoryController.editCategory);
 
   categoryRoute
     .route("/deletCategories")

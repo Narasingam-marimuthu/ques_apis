@@ -23,10 +23,20 @@ module.exports = {
       res.status(400).send({ status: 0, message: results.message, data: {} });
     }
   },
+  getCategoryById: async (req, res, next) => {
+    let result = await Category.getCategoryById(req);
+    if (result.success) {
+      res
+        .status(200)
+        .send({ status: 1, message: result.message, result: result.data });
+    } else {
+      res.status(400).send({ status: 0, message: result.message, result: {} });
+    }
+  },
   editCategory: async (req, res, next) => {
-    console.log(req, "req");
+    // console.log(req, "req");
 
-    let results = await Category.editCategory(req.body);
+    let results = await Category.editCategory(req);
     if (results.success) {
       res
         .status(200)
