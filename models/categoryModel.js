@@ -6,12 +6,12 @@ dotenv.config();
 
 class Category {
   static async addCategory(req) {
-    console.log(req.files.image, "req");
+    // console.log(req.files.image, "req");
     try {
       let query = knex(process.env.CATEGORY).insert({
         id: crypto.randomUUID(),
         category_name: req.body.category_name,
-        image: fileupload.imageLoop(req.files),
+        // image: fileupload.imageLoop(req.files),
       });
       await query;
       return {

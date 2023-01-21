@@ -2,12 +2,11 @@ const knex = require("../knex");
 const crypto = require("crypto");
 
 exports.seed = async function (Promise) {
-  let tableName = "ques_category";
+  let tableName = "categories";
   let rows = [
     {
       id: crypto.randomUUID(),
       category_name: "super",
-      image: "images.jpeg",
     },
   ];
 
