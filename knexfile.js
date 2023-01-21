@@ -5,7 +5,7 @@ module.exports = {
       host: "localhost",
       user: "ubuntu",
       password: "password123",
-      database: "marine_ques",
+      database: "postgres",
       charset: "utf8",
       pool: {
         min: 2,
