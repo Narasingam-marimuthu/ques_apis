@@ -3,8 +3,8 @@ module.exports = {
     client: "postgresql",
     connection: {
       host: "localhost",
-      user: "postgres",
-      password: "postgres",
+      user: "ubuntu",
+      password: "password123",
       database: "marine_ques",
       charset: "utf8",
       pool: {
