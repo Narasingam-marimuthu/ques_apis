@@ -11,6 +11,7 @@ exports.seed = async function (promise) {
       title: "",
       question: `hello , are you there ?    `,
       answer: 2,
+      type: 1,
       mark: 1,
     },
   ];

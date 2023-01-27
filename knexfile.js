@@ -1,11 +1,11 @@
 module.exports = {
   development: {
-    client: "postgresql",
+    client: "pg",
     connection: {
       host: "localhost",
-      user: "ubuntu",
-      password: "password123",
-      database: "postgres",
+      user: "postgres",
+      password: "postgres",
+      database: "marine_ques",
       charset: "utf8",
       pool: {
         min: 2,
@@ -19,19 +19,40 @@ module.exports = {
       directory: __dirname + "/seeds",
     },
   },
-  staging: {
-    client: "postgresql",
-    connection: {
-      database: "marine_ques",
-      user: "postgres",
-      password: "postgres",
-    },
-    pool: {
-      min: 2,
-      max: 10,
-    },
-    migrations: {
-      tableName: "knex_migrations",
-    },
-  },
+
+  // development: {
+  //   client: "postgresql",
+  //   connection: {
+  //     host: "localhost",
+  //     user: "ubuntu",
+  //     password: "password123",
+  //     database: "postgres",
+  //     charset: "utf8",
+  //     pool: {
+  //       min: 2,
+  //       max: 5,
+  //     },
+  //   },
+  //   migrations: {
+  //     directory: __dirname + "/migrations",
+  //   },
+  //   seeds: {
+  //     directory: __dirname + "/seeds",
+  //   },
+  // },
+  // staging: {
+  //   client: "postgresql",
+  //   connection: {
+  //     database: "marine_ques",
+  //     user: "postgres",
+  //     password: "postgres",
+  //   },
+  //   pool: {
+  //     min: 2,
+  //     max: 10,
+  //   },
+  //   migrations: {
+  //     tableName: "knex_migrations",
+  //   },
+  // },
 };
