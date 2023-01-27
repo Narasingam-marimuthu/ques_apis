@@ -16,7 +16,7 @@ module.exports = () => {
     .put(categoryController.editCategory);
 
   categoryRoute
-    .route("/deletCategories")
+    .route("/deleteCategories")
     .delete(categoryController.deleteCategory);
 
   return categoryRoute;

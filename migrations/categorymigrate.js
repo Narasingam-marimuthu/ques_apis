@@ -8,5 +8,5 @@ exports.up = function () {
 };
 
 exports.down = function () {
-  return knex.schema.dropTable("sysnx_users");
+  return knex.schema.dropTable("categories");
 };
